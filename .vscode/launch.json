@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    float sum, b;
+    int a;
+    scanf("%f",sum);
+    a=(int)sum;
+    b=sum-a;
+    printf("整數=%d",a);
+    printf("小數=%f",b);
+    return 0;
+
+}
