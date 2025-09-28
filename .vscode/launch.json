@@ -1,13 +1,78 @@
-#include <stdio.h>
-int main()
 {
-    float sum, b;
-    int a;
-    scanf("%f",sum);
-    a=(int)sum;
-    b=sum-a;
-    printf("整數=%d",a);
-    printf("小數=%f",b);
-    return 0;
-
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(gdb) Windows 附加上的 Bash",
+      "type": "cppdbg",
+      "request": "attach",
+      "program": "輸入程式名稱，例如 ${workspaceFolder}/a.exe",
+      "processId": "${command:pickRemoteProcess}",
+      "pipeTransport": {
+        "debuggerPath": "/usr/bin/gdb",
+        "pipeProgram": "${env:windir}\\system32\\bash.exe",
+        "pipeArgs": ["-c"],
+        "pipeCwd": ""
+      },
+      "setupCommands": [
+          {
+              "description": "啟用 gdb 的美化顯示",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          },
+          {
+              "description": "將反組譯碼變體設為 Intel",
+              "text": "-gdb-set disassembly-flavor intel",
+              "ignoreFailures": true
+          }
+      ]
+    },
+    {
+      "name": "(gdb) Windows 啟動上的 Bash",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "輸入程式名稱，例如 ${workspaceFolder}/a.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "pipeTransport": {
+        "debuggerPath": "/usr/bin/gdb",
+        "pipeProgram": "${env:windir}\\system32\\bash.exe",
+        "pipeArgs": ["-c"],
+        "pipeCwd": ""
+      },
+      "setupCommands": [
+          {
+              "description": "啟用 gdb 的美化顯示",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          },
+          {
+              "description": "將反組譯碼變體設為 Intel",
+              "text": "-gdb-set disassembly-flavor intel",
+              "ignoreFailures": true
+          }
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/brian/Documents/程式/C_test/9/0927",
+      "program": "c:/Users/brian/Documents/程式/C_test/9/0927/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
 }
